@@ -1,8 +1,5 @@
 import React from 'react';
 import UserClass from './components/user/UserClass';
-import UserFunction from './components/userfunction/UserFunction';
-import UserChildren from './components/userchildren/UserChildren';
-
 
 class App extends React.Component
 {
@@ -41,8 +38,6 @@ class App extends React.Component
         years={users[0].years}
         onNameChange={this.handleNameChange} //slanje propsa sa funkcijom u child komponentu da child ima pristup stateu
       />
-      <UserFunction name={users[1].name} years={users[1].years}/>
-      <UserChildren name={users[2].name} years={users[2].years}/>
       
     </div>
     )  //u reactu mora postojati parent element

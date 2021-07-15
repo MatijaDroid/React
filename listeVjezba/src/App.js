@@ -5,9 +5,10 @@ class App extends React.Component
 {
   state = {
     users :[
-      {name: 'Ivan', years:30},
-      {name: 'Marko', years:35},
-      {name: 'Ana', years:25}
+      { id: 1, name: 'Ivan', years:30 },
+      { id: 2,name: 'Marko', years:35 },
+      { id: 3,name: 'Ana', years:25 },
+      { id: 4,name: 'Štef', years:55 }
     ]
   };
   
@@ -33,11 +34,16 @@ class App extends React.Component
     <div>
       <h1>Hello!!!</h1>
       <button onClick={this.changeYears}>Change years</button>
-      <UserClass // dovoljna je jedna komponenta usera
-        name={users[0].name} 
-        years={users[0].years}
-        onNameChange={(event) => this.handleNameChange(event, 0)} // pozivanje preko anonimne funkcije gdje šaljemo event i index gdje mijenjamo podatak
-      />      
+      {
+        users.map((user, index) => (
+          <UserClass // dovoljna je jedna komponenta usera
+          key = { user.id }
+          name={ user.name } 
+          years={ user.years }
+          onNameChange={(event) => this.handleNameChange(event, index)} // pozivanje preko anonimne funkcije gdje šaljemo event i key liste
+        />
+        )) //uglate zagrade koristimo jer JSX gleda {} kao otvaranje i zatvaranje javascripta
+      }
     </div>
     )  //u reactu mora postojati parent element
   };

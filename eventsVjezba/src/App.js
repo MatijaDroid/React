@@ -18,13 +18,16 @@ class App extends React.Component
     const { users } = this.state;
 
     const newUsers = users.map(user => { // mapiranje niza da dobijemo podatke za svakog usera, umjesto petlji koristimo map i imamo anonimnu arrow funkciju 
-      return { ...user, years: user.years + 1 }; // spread operator za nizove
+      return { ...user, years: user.years + 1 }; // spread operator za nizove, nije cijeli niz kloniran nego element po element
     });
     this.setState({users : newUsers}); // reflektirajuća promjena stanja se radi preko setState
   }
   
-  handleNameChange = () =>{ // moramo poslati funkciju putem propsa u child komponentu
-    console.log("radi");
+  handleNameChange = (event) =>{ // funkcija koju šaljemo putem propsa u child komponentu i on prima event radi targeta koji nam treba da bi povukli value
+    const { users } = this.state;
+    const newUsers = [...users]; //kloniranje users-a pošto mijenjamo jednog onda je ovo bolje jer ne utječemo na ostale
+    newUsers[0].name = event.target.value;
+    this.setState({users : newUsers})
   }
 
   render(){
@@ -36,7 +39,7 @@ class App extends React.Component
       <UserClass 
         name={users[0].name} 
         years={users[0].years}
-        onNameChange={this.handleNameChange} //slanje propsa sa funkcijom u child komponentu da ima pristup
+        onNameChange={this.handleNameChange} //slanje propsa sa funkcijom u child komponentu da child ima pristup stateu
       />
       <UserFunction name={users[1].name} years={users[1].years}/>
       <UserChildren name={users[2].name} years={users[2].years}/>

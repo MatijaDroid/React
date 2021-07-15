@@ -7,8 +7,12 @@ class UserClass extends React.Component
         const { name, years } = this.props; //dereferenciranje unutar klasa se radi preko this.props jer se name i years nalaze u propsu
         return(
             <div>
-                Pozdrav moje ime je {name} i imam {years} godina.
+                <p> Pozdrav moje ime je {name} i imam {years} godina.</p>
+                <p>
+                    <input type="text" />
+                </p>
             </div>
+            
         );
     };
 }

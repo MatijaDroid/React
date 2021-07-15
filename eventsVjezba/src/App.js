@@ -17,15 +17,6 @@ class App extends React.Component
   changeYears =() =>{
     const { users } = this.state;
 
-    // const newUsers = [];
-    
-    // users.forEach(val => {
-    //   newUsers.push({
-    //     name :val.name,
-    //     years: val.years + 1
-    //   })
-    // });
-  
     const newUsers = users.map(user => { // mapiranje niza da dobijemo podatke za svakog usera, umjesto petlji koristimo map i imamo anonimnu arrow funkciju 
       return { ...user, years: user.years + 1 }; // spread operator za nizove
     });

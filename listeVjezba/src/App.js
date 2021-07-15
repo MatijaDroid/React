@@ -20,10 +20,10 @@ class App extends React.Component
     this.setState({users : newUsers}); // reflektirajuća promjena stanja se radi preko setState
   }
   
-  handleNameChange = (event) =>{ // funkcija koju šaljemo putem propsa u child komponentu i on prima event radi targeta koji nam treba da bi povukli value
+  handleNameChange = (event, index) =>{ // u eventu
     const { users } = this.state;
     const newUsers = [...users]; //kloniranje users-a pošto mijenjamo jednog onda je ovo bolje jer ne utječemo na ostale
-    newUsers[0].name = event.target.value;
+    newUsers[index].name = event.target.value;
     this.setState({users : newUsers})
   }
 
@@ -33,12 +33,11 @@ class App extends React.Component
     <div>
       <h1>Hello!!!</h1>
       <button onClick={this.changeYears}>Change years</button>
-      <UserClass 
+      <UserClass // dovoljna je jedna komponenta usera
         name={users[0].name} 
         years={users[0].years}
-        onNameChange={this.handleNameChange} //slanje propsa sa funkcijom u child komponentu da child ima pristup stateu
-      />
-      
+        onNameChange={(event) => this.handleNameChange(event, 0)} // pozivanje preko anonimne funkcije gdje šaljemo event i index gdje mijenjamo podatak
+      />      
     </div>
     )  //u reactu mora postojati parent element
   };

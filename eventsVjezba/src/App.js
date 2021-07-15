@@ -23,13 +23,21 @@ class App extends React.Component
     this.setState({users : newUsers}); // reflektirajuća promjena stanja se radi preko setState
   }
   
+  handleNameChange = () =>{ // moramo poslati funkciju putem propsa u child komponentu
+    console.log("radi");
+  }
+
   render(){
     const { users } = this.state;
     return (
     <div>
       <h1>Hello!!!</h1>
       <button onClick={this.changeYears}>Change years</button>
-      <UserClass name={users[0].name} years={users[0].years}/>
+      <UserClass 
+        name={users[0].name} 
+        years={users[0].years}
+        onNameChange={this.handleNameChange} //slanje propsa sa funkcijom u child komponentu da ima pristup
+      />
       <UserFunction name={users[1].name} years={users[1].years}/>
       <UserChildren name={users[2].name} years={users[2].years}/>
       

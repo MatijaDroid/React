@@ -21,10 +21,10 @@ class App extends React.Component
     this.setState({users : newUsers}); // reflektirajuća promjena stanja se radi preko setState
   }
   
-  handleNameChange = (event, index) =>{ // u eventu
+  handleNameChange = (event, index) =>{ // u eventu dobivamo event i index da možemo znati o kojem se elementu točno radi
     const { users } = this.state;
     const newUsers = [...users]; //kloniranje users-a pošto mijenjamo jednog onda je ovo bolje jer ne utječemo na ostale
-    newUsers[index].name = event.target.value;
+    newUsers[index].name = event.target.value; 
     this.setState({users : newUsers})
   }
 
@@ -40,7 +40,7 @@ class App extends React.Component
           key = { user.id }
           name={ user.name } 
           years={ user.years }
-          onNameChange={(event) => this.handleNameChange(event, index)} // pozivanje preko anonimne funkcije gdje šaljemo event i key liste
+          onNameChange={(event) => this.handleNameChange(event, index)} // pozivanje preko anonimne funkcije gdje šaljemo event i index liste
         />
         )) //uglate zagrade koristimo jer JSX gleda {} kao otvaranje i zatvaranje javascripta
       }

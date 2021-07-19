@@ -27,7 +27,7 @@ function App() {
             {/*za link koristimo to= a ne href kak se koristi u HTML-u*/}
           </nav>
 
-          <Route path="/home" component={Home} />
+          <Route path="/" exact component={Home} /> {/*exact nam služi da radi distinkciju između putanja*/}
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
           <Route path="/contact" component={Contact} />

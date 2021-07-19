@@ -12,7 +12,7 @@ function App() {
           <nav>
             <ul>
               <li>
-                <Link to="/home">Home</Link> 
+                <Link to="/home">Home</Link>  
               </li>
               <li>
                 <Link to="/about">About Us</Link>
@@ -27,7 +27,10 @@ function App() {
             {/*za link koristimo to= a ne href kak se koristi u HTML-u*/}
           </nav>
 
-          <Path path="/" components={Home} />
+          <Route path="/home" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+          <Route path="/contact" component={Contact} />
           
         </div> 
     </BrowserRouter>

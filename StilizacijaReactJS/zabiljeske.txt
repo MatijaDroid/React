@@ -1,0 +1,10 @@
+-možemo preko klasičnog CSS filea koji importamo
+-možemo napisati i modul te preko importa ga povlačimo unutar aplikacije
+-inline stilizaciju skoro nikad ne koristimo nego radije planiramo cijeli css
+
+React Bootstrap
+-možemo koristiti bootstrap u reactu preko npm-a: react-bootstrap
+-izgradi nam komponenete
+-sve komponente u biblioteci su čiste react komponente i mogu se importirati i koristiti u JSX-u
+
+npm install --save bootstrap reacct-bootstrap

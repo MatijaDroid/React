@@ -8,3 +8,29 @@ React Bootstrap
 -sve komponente u biblioteci su čiste react komponente i mogu se importirati i koristiti u JSX-u
 
 npm install --save bootstrap reacct-bootstrap
+
+Strukturiranje React aplikacije
+-razlikujemo sljedeće module :
+Components
+Fragments
+Utilities
+
+Componenets
+-prezentacijske komponente i nemaju svoje stanje 
+-jednostavne komponenete bez puno logike
+
+Fragments(containers)
+-složene komponenete, imaju vlastito stanje ili su na neki način spojene na stanje app
+-najčešće importiramo
+
+Utilities
+-obične JS datoteke
+-korisne funkcije koje se koriste kroz cijelu aplikaciju
+-npr date.js koje može sadržavati funkcije za manipulaciju i prikaz datuma
+
+Organizacija prema funkcionalnosti
+-za velike aplikacije (stotine komponenti)
+-korisno organizirati dikretorije prema setovima funkcionalnosti
+
+coloradmin theme
+pogledaj react bootstrap

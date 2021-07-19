@@ -1,0 +1,29 @@
+-ReactJS je za single page apps
+-routingom riješavamo mogućnost prelaska sa stranice na stranicu
+-stranica se ne učitava ponovno
+-svi potrebni resursi se dinamički učitavaju
+
+React router
+-biblioteka za navigaciju po react app preko web adrese
+-react presreće request i preusmjerava na content koji je potreban
+-pozivom web adrese React aplikacija se otvara u unaprijed definiranom stanju
+
+-potrebno je instalirati react router da se može koristiti
+
+dva osnovna koncepta:
+1. route - služe za povezivanje React komponenete s određenom web adresom odsnosno određuju koja komponenta se prikazuje na kojoj stranici
+-da bi koristili rute koristimo komponentu Route koju importamo iz biblioteke react-router-dom
+
+2.Switch
+-koristi za switchanje između 
+-možemo ugnjezditi više Route komponenti
+
+3. Link
+-navigacija unutar React aplikacije
+
+4. BrowserRouter
+-na vrh DOM-a React aplikacije kako bi se omogućio ispravan rad React Router biblioteke
+
+Dodatne komponenete
+NavLink- posebna vrsta komponenete Link koju je moguće dodatno stilizirati
+Redirect - omogućuje navigaciju na određenu rutu preko JSX-a

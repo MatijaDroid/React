@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      Moja prva aplikacija.
+      Styles.
     </div>  //u reactu mora postojati parent element
   );
 }

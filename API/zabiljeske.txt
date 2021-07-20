@@ -20,6 +20,82 @@ RESTfull API
 			 djelomično primijenjen (PATCH)
 			 izbrisan(DELETE)
 
+GraphQL
+---------------------------------------
+Graph Query Language
+-moguće koristiti u svakom slučaju kad poslužitelj ili baza podataka podržavaju GraphQL programsko sučelje
+-dopušta klijentu da točno definira upit za željene podatke
+-upiti uvijek vraćaju predvidljive rezultate
+-aplikacije koje koriste GraphQL su brze i stabile i one same kontroliraju podatak koji primaju a ne poslužitelj
 
+Apollo
+--------------------------------------
+-jedan od najpopularnijih biblioteka koja nam nudi integraciju GraphQL-a unutar React aplikacije
+-pomoću biblioteke Apollo može se definirati koja komponenta zahtijeva podatke s GrapQL API-ja
+-komponenta koja traži podatke može biti u tri stanja:
+	-učitavanje(loading)
+	-uspješno završen upit(success)
+	-pojavila se greška (error)
 
-"https://cors-anywhere.herokuapp.com/https://api.hnb.hr/tecajn/v1"
+-------------------------------------
+----Napredno upravljanje stanjima----
+-------------------------------------
+
+Skladišta stanja
+-------------------------------------
+-u većim React aplikacijama često se pojavljuje potreba da više komponenti dijeli isto stanje
+-u jednostavnijem slučaju možemo sve komponente koje dijele isto stanje staviti kao child komponenete unutar iste parent komponenete - tada parent komponeneta preko propsa prosljeđuje isti dio stanja svim komponentama
+-često nije praktično riješenje te koristimo napredne biblioteke za upravljanje stanjima MobX i Redux
+
+Redux i Mobx
+------------------------------------
+-trenutno najpopularnije biblioteke za spremanje podataka i skladišta stanja (state store)
+-app najčešće imaju samo jedno skladište stanja kje se može sastojati od više manjih dijelova
+-svaki dio se brine za odvojeni dio aplikacije i u pravilu bi oni trebali biti neovisni jedni o drugima
+
+-redux je bolji za skalabilne aplikacije
+-lakši za otklanjanje grešaka i izrazito dobri razvojni alati
+-lakše održavanje aplikacije
+
+Redux
+-----------------------------------
+-odličan primjer za skladište stanja jer je veoam ekspresivna i ima točno određen oblik
+-Redux store(skladište stanja) sastoji se od više povezanih dijelova te ima dosta restriktcija kojih se treba pridržavati
+-najvažnija restrikcija - samo jedan Redux store i ne smije se modificirati (postoje propisane konvencije načina na koji se smije mijenjati)
+
+-nije dozvoljena modifikacija podataka u trenutnom stanju zato da biblioteka lakše može odrediti koje točno vrijednosti treba promijeniti
+-svaka promjena koja se želi pohraniti u Redux store mora proći kroz funkciju reducer
+-reduceri su jedan od osnovnih koncepata Redux-a
+
+-svaki reducer kao parametre prima trenutno stanje i akciju koja ga je pokrenula
+-vraćaju novo stanje i ne modificira pritom ulazne podatke
+-radi se kopija trenutnog stanja te se ono zatim modificira kao izlaz iz reducera
+
+-Redux koristi izlaz reducer funkcije za analizu promjena te će promijeniti redux store prema tome
+-sve reducer funkcije moraju biti čiste
+-redux ne smije vršiti asinkrone akcije i ne smije modificirati ulazne parametre
+
+Redux - reducers
+-----------------------------------
+-u većini aplikacija najčešće će postojati samo jedna reducer funkcija koja će ovisno o akciji koja ju je pozvala vratiti drugačiji rezultat
+-ako se pokrene akcijom na koju nezna odgovoriti dužan je vratiti stanje koje je primio kao parametar ili ako stanje nije predano dužan je vratiti inicijalno stanje aplikacije
+
+Redux - actions
+-----------------------------------
+-akcije su funkcije koje se pozivaju kako bi se izvšile promjene na redux store
+-reduceri reagiraju na akcije i u ovisnosti o njima mijenjaju stanje
+
+Redux - connect
+-----------------------------------
+-HOC komponenta koja pruža biblioteku Redux i u nju je moguće ugnjezditi bilo koju React komponentu kako bi dobila pristup i mogućnost promjene stnaja app spremljene u Redux skaldištu
+
+-connect prima dvije funkcije:
+	-mapStateToProps - mapira podatke iz stanja u propse i prosljedi child komponenti kroz propse željeni dio stanja
+	-MapDispatchToProps - omogućuje okidanje akcija namjenjeih za promjenu stanja
+
+Redux - useSelector, useDispathc
+----------------------------------
+-kada koristimo hookse
+-useSelector - služi za dohvaćanje željenog dijela stanjaapp koji je zapisan u Redux store-u
+-useDiscpatch - omogućuje okidanje akcija koje služe za promjenu Redux stanja
+-stanja ne držimo po komponentama nego se nalaze u Redux store-u

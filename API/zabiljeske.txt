@@ -1,0 +1,24 @@
+API- application programming interface
+-----------------------------------------
+-komunikacija aplikacija jedna sa drugom
+-nama bitni mrežni API koji služe za komunikaciju web aplikacija s poslužiteljem gdje se nalaze podatci
+-ne služi samo za web aplikacije nego i za ostale vrste (desktop itd)
+
+JSON API
+-----------------------------------------
+-prima zahtjeve i vraća odgovore u JSON formatu
+-danas najpopularniji i vrlo rasprostranjen
+-danas se nazivaju takvi API - RESTfull API
+
+RESTfull API
+----------------------------------------
+-konvencija za organizaciju arhitekture mrežnih API-ja
+-glavni koncept - resurs
+-svaki resurs može biti: dohvaćen(GET)
+			 kreiran(POST)
+			 promijenjen(PUT)
+			 djelomično primijenjen (PATCH)
+			 izbrisan(DELETE)
+
+
+

@@ -1,0 +1,1 @@
+//ne radi se o react komponentama pa nam netreba Pascal case

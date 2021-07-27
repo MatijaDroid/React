@@ -1,0 +1,1 @@
+//ovaj file drži konfiguraciju store-a

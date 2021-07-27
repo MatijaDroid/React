@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux'; //cilj connecta je da možemo iz storea mapirati state i da to bude dostupno komponenti app
 
-function App() {
+
+function App({ count }) { // dohvaćamo count
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div style={{textAlign: "center"}}>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+            <button onClick={subbOne}>-</button>  
+            {/* postavljanje evenata onClick */}
+            <span style={{padding: "20px"}}>Broj: {count}</span>
+            <button onClick={addOne}>+</button>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <p>
+          <button onClick={reset}>Reset</button>
+        </p>
     </div>
   );
 }
 
-export default App;
+//metoda koja iz reduxa pokupi podatak state i mapira ga na count
+const mapStateToProps = (state) =>{
+  return {
+    count: state
+  }
+}
+
+export default connect(
+  mapStateToProps 
+)(App); // mičemo export default App i stavljamo connect da se spoji store i tek sad je store vezan uz komponentu 
+//stavljamo u prvu zagradu da sigurno vežemo store sa komponentom
+// druge zagrade su za export komponenete koju imamo

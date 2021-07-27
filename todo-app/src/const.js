@@ -1,0 +1,1 @@
+// sve konstante koje kasnije služe u aplikaciji

@@ -7,7 +7,7 @@ import { reducer } from './redux'
 import App from './App';
 import './index.css';
 
-const store = createStore(reducer); //stvaramo store tako da createStore šaljemo reducer
+const store = createStore(reducer); //stvaramo store tako da metodi createStore prosljedimo reducer, kroz reducer upravljamo stateom
 // u provider stavljamo store da bude globalno dostupan
 ReactDOM.render(
   <React.StrictMode>

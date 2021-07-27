@@ -1,6 +1,6 @@
 {
-  "short_name": "Moja prva aplikacija",
-  "name": "Moja prva aplikacija",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

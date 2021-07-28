@@ -31,7 +31,7 @@ class TodoForm extends React.Component{ // ima svoj state preko kojeg prikupljam
         this.setState({newTask : ''}); //resetiranje input polja
 
         if(this.ref.current){
-            this.ref.current.focus();// pozivanje metode fokus na ref koji smo postavili prije
+            this.ref.current.focus();// pozivanje metode fokus na ref koji smo postavili prije, većinom se koriste kod inputa
         }
     }
 

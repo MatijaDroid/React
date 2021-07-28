@@ -1,5 +1,5 @@
 import React from 'react';
-import  Form  from 'react-bootstrap';
+import  {Form}  from 'react-bootstrap';
 class TodoForm extends React.Component{ // ima svoj state preko kojeg prikupljamo podatke 
 
     state = {
@@ -9,7 +9,7 @@ class TodoForm extends React.Component{ // ima svoj state preko kojeg prikupljam
     render(){
         return (
             <Form>
-                                 
+                           
             </Form>
         );
     }

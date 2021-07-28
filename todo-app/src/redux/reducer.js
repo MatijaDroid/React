@@ -9,7 +9,14 @@ import {  // nemoramo ovako pisati ali je preglednije
 const todos = (state = [], action) => {
     switch(action.type){
         case ADD_TODO:
-            return;
+            return [
+                ...state, // sa spread operatorom riješimo da dodamo novi task ali da ne narušavamo postojeći niz taskova
+                {
+                    id: action.id,
+                    text: action.text,
+                    completed: false
+                }
+            ];
         case TOGGLE_TODO:
             return;
         case REMOVE_TODO:

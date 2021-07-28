@@ -11,7 +11,7 @@ function App({ todos, addTodo }) {
       <h1 className="header">My Tasks</h1>
       {/* TODO: Navigacija */}
       <div className="todo-container">
-        <TodoForm addTodo= { addTodo }/>
+        <TodoForm addTodo= { addTodo }/>  {/*prosljeđujemo propse todo komponenti */}
       </div>
     </div>
   );

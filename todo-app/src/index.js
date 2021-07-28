@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'; 
 import { PersistGate } from 'redux-persist/es/integration/react'; //pristup svim child komponentama store-u, drži store kod sebe
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
+import { configureStore } from './configureStore'; // import confg storea koji exportamo kao anonimnu funkciju
 import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
+
+const { store } = configureStore(); // pozivamo configureStore funkciju iz configureStore.js
+
 // jedan router, jedna komponenta, radi preko visibility-a i const.js i redux selectori će određivati što se prikazuje
 ReactDOM.render(
   <React.StrictMode>

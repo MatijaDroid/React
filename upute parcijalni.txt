@@ -1,0 +1,9 @@
+-za dva upita -> da pogledamo što jednom a što drugom endpointu moramo poslati - koji podatak moramo poslati
+-ako je isti podatak onda istovremeno možemo dohvatit podatke
+-stavljamo u promise oba dva fetcha da dohvatimo sve podatke u jedan promise
+
+-ako nam treba podatak iz prethodnog fetcha onda radimo definitivno dva fetcha i dva promisa
+-stavljamo ih sljedno tako da u responsu prvog pokrećemo drugi fetch
+
+-dok fetch ne završi ne gasimo preloader
+

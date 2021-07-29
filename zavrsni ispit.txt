@@ -1,0 +1,7 @@
+-chat app
+-oslanja se na api
+
+-integrirati u react
+-treba popeglati da se šalju propsi itd
+
+-za obranu - moramo prikazati kako naša aplikacija radi - svaki dio aplikacije(od kud nam podatci, preko čega se šalju itd...)
